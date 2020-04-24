@@ -1,8 +1,8 @@
 # newpreneur
 
-## Project setup
+## Rename and Traget App
 ```
-npm install
+firebase target:apply hosting newpreneur newpreneur
 ```
 
 ### Compiles and hot-reloads for development

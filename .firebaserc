@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "newpreneurin"
+  },
+  "targets": {
+    "newpreneurin": {
+      "hosting": {
+        "newpreneur": [
+          "newpreneur"
+        ]
+      }
+    }
+  }
+}
