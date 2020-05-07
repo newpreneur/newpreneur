@@ -1,89 +1,154 @@
 <template>
   <div id="app">
-    <card-swipe>
-      <card-swipe-item>
-        <div
-          class="color-card"
-          style="background-image: linear-gradient(to right, #fe686c 0%, #fe3c71 100%)"
-        >1</div>
-      </card-swipe-item>
-      <card-swipe-item>
-        <div
-          class="color-card"
-          style="background-image: linear-gradient(to right, #ffaa00 0%, #ff8800 100%);"
-        >2</div>
-      </card-swipe-item>
-      <card-swipe-item>
-        <div
-          class="color-card"
-          style="background-image: linear-gradient(to right, #add0f8 0%, #5ca2f8 100%);"
-        >3</div>
-      </card-swipe-item>
-    </card-swipe>
+  <div class="chat_area">
+      <Card/>
+    <div class = "chat_input">
+    <input type="text" name="message" placeholder=" enter message here  and press Enter..."/>
+    </div>
   </div>
+    </div>
 </template>
 
 <script>
-import { CardSwipe, CardSwipeItem } from "@eshengsky/vue-card-swipe";
+import Card from './Components/Card';
 export default {
 name: 'App',
-  components: {
-    CardSwipe,
-    CardSwipeItem
-  }
+components: {
+ Card
+},
 };
 </script>
 
 <style>
-body {
-  max-width: 375px;
-  margin: 10px auto;
-}
+  * {
+     font-family: 'Open Sans', sans-serif;
+   font-size : 16px;
+    line-height : 1.5rem;
+    color : #525c65;
+    font-smooth: always;
+    text-decoration : none;
+  }
+  body {
+    background-size: cover;
+  }
+  #app {
+    height : 100vh;
+    display:flex;
+    align-items: center;
+    justify-content : space-around;
+  }
+  .chat_area {
+    width : 400px;
+    height : 700px;
+    background : #fff;
+    align-self : center;
+    box-shadow : 8px 10px 20px 0px rgba(46,61,73,0.15);
+    border-radius : 30px;
+  position: relative;
+    border : 5px solid rgba(0,0,0,0.2);
 
-.detail-wrap {
-  display: block;
-  height: 100%;
-  border-radius: 5px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
-.detail-wrap h5 {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 0 15px;
-  display: -webkit-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  word-break: break-all;
-  font-size: 16px;
-  line-height: 20px;
-  color: #fff;
-  -webkit-line-clamp: 2;
-  max-height: 38px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  text-shadow: 0px 0px 4px #333;
-}
+  }
+  .chat_area .chat_input {
+    position : absolute;
+    bottom : 0;
+    width : 100%;
+    height : 50px;
+    padding : 20px 0 20px 0;
+    background:#FFEB3B;
+    display : flex;
+    justify-content : center;
+    align-items: center;
+    border-bottom-left-radius : 25px;
+    border-bottom-right-radius : 25px;
+    border-top : 5px solid #FDD835;
+  }
+  .chat_area .chat_input input {
+    width : 80%;
+    height : 40px;
+    border : 1px solid transparent;
+    box-shadow : 8px 10px 20px 0px rgba(61,61,61,0.5);
+    padding : 10px;
+    text-align : center;
+    border-radius : 50px;
+    text-transform : uppercase;
+    font-size : 10px;
+    letter-spacing : 2px;
+  }
+  .chat_area .conversation {
+    width : 85%;
+    margin : 0 auto;
+    padding : 25px;
+    margin-top : 20px;
+    height : 620px;
+    scrollbar-base-color: #fff;
+    scrollbar-face-color: #dadada;
+    scrollbar-3dlight-color: #fff;
+    scrollbar-highlight-color: #fff;
+    scrollbar-track-color: #fff;
+    scrollbar-arrow-color: #fff;
+    scrollbar-shadow-color: #fff;
+    scrollbar-dark-shadow-color: #fff;
 
-.color-card {
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  color: #fff;
 
-  font-size: 36px;
-}
 
-.msg {
-  font-size: 14px;
-  margin: 10px 0;
-  color: #555;
-}
+
+  }
+  .message_bubble {
+    text-transform : uppercase;
+    display : flex;
+    flex-direction : column;
+
+
+  }
+  .message_bubble .content .author , .message_bubble .content .message {
+    font-size : 12px;
+    letter-spacing : 2px;
+  }
+
+  .message_bubble .content {
+
+    display : flex;
+    padding:5px;
+    margin-top : 5px;
+    align-items : flex-start;
+
+  }
+  .message_bubble .content > div {
+    margin:5px;
+    margin-right:10px;
+  }
+
+
+  .right .content{
+    flex-direction :row-reverse ;
+    background : #dadada;
+    border-radius : 50px;
+
+  }
+  .left .content{
+    background : #B3E5FC;
+    border-radius : 50px;
+  }
+
+  .right .timestamp {
+    text-align : right;
+  }
+  .timestamp {
+
+    font-size : 10px;
+    color: #000;
+    letter-spacing : 2px;
+  }
+  .content .author {
+    height : 40px;
+    width:40px;
+    min-width:40px;
+    background : #000;
+    color : #fff;
+    text-align : center;
+    font-size : 10px;
+    line-height : 40px;
+    border-radius : 50px;
+  }
 </style>

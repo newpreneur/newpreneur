@@ -60,5 +60,8 @@
       "sizes": "150x150",
       "type": "image/png"
     }
-  ]
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "start_url":"."
 }
