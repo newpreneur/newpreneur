@@ -1,18 +1,40 @@
 <template>
-  <div id="app">
+  <div  id="app">
   <div class="chat_area">
-      <Card/>
+  <div v-if='loading'>
+  <div class="loader">
+    <h2>Newpreneur</h2>
+  </div>
+  </div>
+  <div v-else>
+  <Card ></Card>
     <div class = "chat_input">
     <input type="text" name="message" placeholder=" enter message here  and press Enter..."/>
     </div>
   </div>
-    </div>
+  </div>
+  </div>
 </template>
 
 <script>
 import Card from './Components/Card';
 export default {
 name: 'App',
+data() {
+    return{
+      loading: true,
+    };
+  },
+  methods: {
+    showloader() {
+      setTimeout(() => {
+        this.loading = false;
+      }, 2000);
+    }
+  },
+  mounted() {
+    this.showloader();
+  },
 components: {
  Card
 },
@@ -151,4 +173,68 @@ components: {
     line-height : 40px;
     border-radius : 50px;
   }
+  .loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  line-heght: 200px;
+  overflow: hidden;
+}
+.loader h2 {
+  color: #fff;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loader:before {
+  content:"";
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 150%;
+  background: #0060da;
+  animation: animate1 2s infinite linear;
+}
+.loader:after {
+  content:"";
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 150%;
+  background: #e6005e;
+  animation: animate2 1s infinite linear;
+}
+
+@keyframes animate1 {
+  0%{
+    transform: translateY(100%);
+    left: 100%;
+  }
+  100%{
+    transform: translateY(-100%);
+    left: -50%;
+  }
+}
+@keyframes animate2 {
+  0%{
+    transform: translateY(100%);
+    left: -50%;
+  }
+  100%{
+    transform: translateY(-100%);
+    left: 100%;
+  }
+}
+
 </style>

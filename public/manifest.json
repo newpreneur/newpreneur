@@ -63,5 +63,10 @@
   ],
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
-  "start_url":"."
+  "name": "Newpreneur",
+  "short_name": "Newpreneur",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "./index.html"
 }

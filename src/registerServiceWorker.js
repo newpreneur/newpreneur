@@ -2,6 +2,8 @@
 
 import { register } from 'register-service-worker'
 
+
+
 if (process.env.NODE_ENV === 'development') {
   register(`${process.env.BASE_URL}service-worker.js`, {
     ready () {
@@ -30,3 +32,12 @@ if (process.env.NODE_ENV === 'development') {
     }
   })
 }
+
+self.addEventListener('fetch', function(event) {});
+
+//
+// @media all and (display-mode: standalone) {
+//   body {
+//     background-color: yellow;
+//   }
+// }
