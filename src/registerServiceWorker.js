@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === 'development') {
   })
 }
 
-self.addEventListener('fetch', function(event) {console.log(event);});
+self.addEventListener('fetch', function(event) {});
 
 //
 // @media all and (display-mode: standalone) {
