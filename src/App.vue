@@ -43,21 +43,27 @@ components: {
 
 <style>
   * {
-     font-family: 'Open Sans', sans-serif;
-   font-size : 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-size : 16px;
     line-height : 1.5rem;
     color : #525c65;
     font-smooth: always;
     text-decoration : none;
+
   }
   body {
     background-size: cover;
+    margin:0 auto; /* remove default margin */
+    padding:0; /* remove default padding */
+    width:100%; /* take full browser width */
+    height:100%; /* take full browser height*/
+    min-height: 100%;
   }
+  html { height: 100% }
   #app {
-    height : 100vh;
-    display:flex;
-    align-items: center;
-    justify-content : space-around;
+    height :100%;
+    display:absolute;
+
   }
   .chat_area {
     width : 400px;
@@ -68,7 +74,6 @@ components: {
     border-radius : 30px;
   position: relative;
     border : 5px solid rgba(0,0,0,0.2);
-
 
   }
   .chat_area .chat_input {
